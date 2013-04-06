@@ -12,6 +12,7 @@
 		B93F0FAC17109ABB0081A02D /* Stocks.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93F0FAB17109ABB0081A02D /* Stocks.1 */; };
 		B93F0FB417109AD60081A02D /* StockBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FB317109AD60081A02D /* StockBase.m */; };
 		B93F0FBD1710BBA50081A02D /* ForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */; };
+		B93F0FE01710CD7E0081A02D /* Portfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FDF1710CD7E0081A02D /* Portfolio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		B93F0FB317109AD60081A02D /* StockBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockBase.m; sourceTree = "<group>"; };
 		B93F0FBB1710BBA50081A02D /* ForeignStockHolding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForeignStockHolding.h; path = Stocks/ForeignStockHolding.h; sourceTree = "<group>"; };
 		B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForeignStockHolding.m; path = Stocks/ForeignStockHolding.m; sourceTree = "<group>"; };
+		B93F0FDE1710CD7E0081A02D /* Portfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portfolio.h; sourceTree = "<group>"; };
+		B93F0FDF1710CD7E0081A02D /* Portfolio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Portfolio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 				B93F0FB317109AD60081A02D /* StockBase.m */,
 				B93F0FBB1710BBA50081A02D /* ForeignStockHolding.h */,
 				B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */,
+				B93F0FDE1710CD7E0081A02D /* Portfolio.h */,
+				B93F0FDF1710CD7E0081A02D /* Portfolio.m */,
 				B93F0FA617109ABB0081A02D /* Stocks */,
 				B93F0FA317109ABB0081A02D /* Frameworks */,
 				B93F0FA217109ABB0081A02D /* Products */,
@@ -152,6 +157,7 @@
 				B93F0FA817109ABB0081A02D /* main.m in Sources */,
 				B93F0FB417109AD60081A02D /* StockBase.m in Sources */,
 				B93F0FBD1710BBA50081A02D /* ForeignStockHolding.m in Sources */,
+				B93F0FE01710CD7E0081A02D /* Portfolio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

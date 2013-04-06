@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "StockBase.h"
 #import "ForeignStockHolding.h"
+#import "Portfolio.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        StockBase *one         = [[StockBase alloc] init];
-        StockBase *two         = [[StockBase alloc] init];
-        StockBase *three       = [[StockBase alloc] init];
-        ForeignStockHolding *four = [[ForeignStockHolding alloc] init];
+        StockBase *one            = [[StockBase alloc] init];
+        StockBase *two            = [[StockBase alloc] init];
+        StockBase *three          = [[StockBase alloc] init];
         
         [one setPurchaseSharePrice:2.30];
         [one setNumberOfShares:40];
@@ -32,17 +32,13 @@ int main(int argc, const char * argv[])
         [three setNumberOfShares:210];
         [three setCurrentSharePrice:49.51];
         
-        [four setPurchaseSharePrice:45.10];
-        [four setNumberOfShares:210];
-        [four setCurrentSharePrice:49.51];
-        [four setConversionRate:1.9];
+        Portfolio *portfolio = [[Portfolio alloc] init];
+        [portfolio addStock:one];
+        [portfolio addStock:two];
+        [portfolio addStock:three];
+        float value = [portfolio value];
         
-        NSArray *stocks = [NSArray arrayWithObjects:one, two, three, four, nil];
-        
-        for(id stock in stocks){
-            NSLog(@"%@", stock);
-        }
-        
+        NSLog(@"Portfolio value is %f", value);
     }
     return 0;
 }

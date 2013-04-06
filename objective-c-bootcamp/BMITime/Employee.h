@@ -7,9 +7,15 @@
 //
 
 #import "Person.h"
+@class Asset;
 
 @interface Employee : Person
+{
+    NSMutableArray *assets;
+}
 
 @property int employeeId;
+- (void)addAssetsObject:(Asset *)a;
+- (unsigned int) valueOfAssets;
 
 @end

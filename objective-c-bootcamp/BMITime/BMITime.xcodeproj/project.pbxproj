@@ -12,6 +12,7 @@
 		B93F0F8F171097280081A02D /* BMITime.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93F0F8E171097280081A02D /* BMITime.1 */; };
 		B93F0F97171097580081A02D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0F96171097580081A02D /* Person.m */; };
 		B93F0FBA1710B9F00081A02D /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FB91710B9F00081A02D /* Employee.m */; };
+		B93F0FDD1710C7930081A02D /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FDC1710C7930081A02D /* Asset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +34,12 @@
 		B93F0F8A171097280081A02D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B93F0F8D171097280081A02D /* BMITime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMITime-Prefix.pch"; sourceTree = "<group>"; };
 		B93F0F8E171097280081A02D /* BMITime.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BMITime.1; sourceTree = "<group>"; };
-		B93F0F95171097580081A02D /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		B93F0F96171097580081A02D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		B93F0FB81710B9F00081A02D /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
-		B93F0FB91710B9F00081A02D /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		B93F0F95171097580081A02D /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ../Person.h; sourceTree = "<group>"; };
+		B93F0F96171097580081A02D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ../Person.m; sourceTree = "<group>"; };
+		B93F0FB81710B9F00081A02D /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Employee.h; path = ../Employee.h; sourceTree = "<group>"; };
+		B93F0FB91710B9F00081A02D /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Employee.m; path = ../Employee.m; sourceTree = "<group>"; };
+		B93F0FDB1710C7930081A02D /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Asset.h; path = ../Asset.h; sourceTree = "<group>"; };
+		B93F0FDC1710C7930081A02D /* Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Asset.m; path = ../Asset.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +57,6 @@
 		B93F0F7B171097280081A02D = {
 			isa = PBXGroup;
 			children = (
-				B93F0FB81710B9F00081A02D /* Employee.h */,
-				B93F0FB91710B9F00081A02D /* Employee.m */,
-				B93F0F95171097580081A02D /* Person.h */,
-				B93F0F96171097580081A02D /* Person.m */,
 				B93F0F89171097280081A02D /* BMITime */,
 				B93F0F86171097280081A02D /* Frameworks */,
 				B93F0F85171097280081A02D /* Products */,
@@ -83,6 +82,12 @@
 		B93F0F89171097280081A02D /* BMITime */ = {
 			isa = PBXGroup;
 			children = (
+				B93F0FDB1710C7930081A02D /* Asset.h */,
+				B93F0FDC1710C7930081A02D /* Asset.m */,
+				B93F0FB81710B9F00081A02D /* Employee.h */,
+				B93F0FB91710B9F00081A02D /* Employee.m */,
+				B93F0F95171097580081A02D /* Person.h */,
+				B93F0F96171097580081A02D /* Person.m */,
 				B93F0F8A171097280081A02D /* main.m */,
 				B93F0F8E171097280081A02D /* BMITime.1 */,
 				B93F0F8C171097280081A02D /* Supporting Files */,
@@ -152,6 +157,7 @@
 				B93F0F8B171097280081A02D /* main.m in Sources */,
 				B93F0F97171097580081A02D /* Person.m in Sources */,
 				B93F0FBA1710B9F00081A02D /* Employee.m in Sources */,
+				B93F0FDD1710C7930081A02D /* Asset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
