@@ -10,27 +10,28 @@
 
 int main(int argc, const char * argv[])
 {
-
+    
     @autoreleasepool {
         
         //load names
-        NSString *namesRaw = [NSString stringWithContentsOfFile:@"/usr/share/dict/propernames"
-                                                    encoding:NSUTF8StringEncoding error:NULL];
+        NSString *namesRaw = [NSString
+                              stringWithContentsOfFile:@"/usr/share/dict/propernames"
+                              encoding:NSUTF8StringEncoding error:NULL];
         NSArray *names = [namesRaw componentsSeparatedByString:@"\n"];
         
         //load dictionary
-        NSString *dictionaryRaw = [NSString stringWithContentsOfFile:@"/usr/share/dict/words"
-                                                       encoding:NSUTF8StringEncoding error:NULL];
+        NSString *dictionaryRaw = [NSString
+                                   stringWithContentsOfFile:@"/usr/share/dict/words"
+                                                    encoding:NSUTF8StringEncoding
+                                                       error:NULL];
         NSArray *words = [dictionaryRaw componentsSeparatedByString:@"\n"];
         
         for (NSString *name in names) {
-            for(NSString *word in words){
-                if([name caseInsensitiveCompare:word] == NSOrderedSame)
-                {
-                    NSLog(@"The Name %@ is also a word (%@ == %@", name, name, word);
-                }
+            if([words containsObject:name]) {
+                NSLog(@"The Name '%@' is also a word.", name);
             }
         }
+        
     }
     return 0;
 }
