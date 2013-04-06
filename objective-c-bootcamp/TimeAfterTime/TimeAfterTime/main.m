@@ -13,7 +13,7 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        NSDate *now = [NSDate date];
+        NSDate *now = [[NSDate alloc] init];
         NSLog(@"The new date is  %@", now);
         
         double seconds = [now timeIntervalSince1970];
@@ -34,6 +34,16 @@ int main(int argc, const char * argv[])
         
         double secondsSinceMyBirth = [[NSDate date] timeIntervalSinceDate:myBirthDate];
         NSLog(@"You were born %f seconds ago", secondsSinceMyBirth);
+        
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        NSUInteger day = [cal ordinalityOfUnit:NSDayCalendarUnit
+                                        inUnit:NSMonthCalendarUnit
+                                       forDate:now];
+        NSLog(@"This is day %lu of the month", day);
+        
+        bool is = [[NSTimeZone systemTimeZone] isDaylightSavingTime];
+        NSLog(@"Is daylight savings time %i", is);
+        
         
     }
     return 0;
