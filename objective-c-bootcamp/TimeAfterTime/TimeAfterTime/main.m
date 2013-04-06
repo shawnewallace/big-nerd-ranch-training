@@ -41,9 +41,8 @@ int main(int argc, const char * argv[])
                                        forDate:now];
         NSLog(@"This is day %lu of the month", day);
         
-        bool is = [[NSTimeZone systemTimeZone] isDaylightSavingTime];
+        BOOL is = [[NSTimeZone systemTimeZone] isDaylightSavingTime];
         NSLog(@"Is daylight savings time %i", is);
-        
         
     }
     return 0;
