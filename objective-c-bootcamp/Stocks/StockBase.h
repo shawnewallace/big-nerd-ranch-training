@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StockHolding : NSObject
+@interface StockBase : NSObject
 
 @property float purchaseSharePrice;
 @property float currentSharePrice;
@@ -16,5 +16,7 @@
 
 - (float)costInDollars;
 - (float)valueInDollars;
+
+- (NSString *)description;
 
 @end

@@ -7,21 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StockHolding.h"
+#import "StockBase.h"
+#import "ForeignStockHolding.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        StockHolding *one = [[StockHolding alloc] init];
-        StockHolding *two = [[StockHolding alloc] init];
-        StockHolding *three = [[StockHolding alloc] init];
+        StockBase *one         = [[StockBase alloc] init];
+        StockBase *two         = [[StockBase alloc] init];
+        StockBase *three       = [[StockBase alloc] init];
+        ForeignStockHolding *four = [[ForeignStockHolding alloc] init];
         
         [one setPurchaseSharePrice:2.30];
         [one setNumberOfShares:40];
         [one setCurrentSharePrice:4.5];
-        
 
         [two setPurchaseSharePrice:12.19];
         [two setNumberOfShares:90];
@@ -31,15 +32,15 @@ int main(int argc, const char * argv[])
         [three setNumberOfShares:210];
         [three setCurrentSharePrice:49.51];
         
-        NSArray *stocks = [NSArray arrayWithObjects:one, two, three, nil];
+        [four setPurchaseSharePrice:45.10];
+        [four setNumberOfShares:210];
+        [four setCurrentSharePrice:49.51];
+        [four setConversionRate:1.9];
         
-        for(StockHolding *stock in stocks){
-            NSLog(@"Purchase Price: %f, Current Price: %f, NumShares: %d, Cost: %f, Value: %f",
-                  [stock purchaseSharePrice],
-                  [stock currentSharePrice],
-                  [stock numberOfShares],
-                  [stock costInDollars],
-                  [stock valueInDollars]);
+        NSArray *stocks = [NSArray arrayWithObjects:one, two, three, four, nil];
+        
+        for(id stock in stocks){
+            NSLog(@"%@", stock);
         }
         
     }

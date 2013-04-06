@@ -10,7 +10,8 @@
 		B93F0FA517109ABB0081A02D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93F0FA417109ABB0081A02D /* Foundation.framework */; };
 		B93F0FA817109ABB0081A02D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FA717109ABB0081A02D /* main.m */; };
 		B93F0FAC17109ABB0081A02D /* Stocks.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93F0FAB17109ABB0081A02D /* Stocks.1 */; };
-		B93F0FB417109AD60081A02D /* StockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FB317109AD60081A02D /* StockHolding.m */; };
+		B93F0FB417109AD60081A02D /* StockBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FB317109AD60081A02D /* StockBase.m */; };
+		B93F0FBD1710BBA50081A02D /* ForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +33,10 @@
 		B93F0FA717109ABB0081A02D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B93F0FAA17109ABB0081A02D /* Stocks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stocks-Prefix.pch"; sourceTree = "<group>"; };
 		B93F0FAB17109ABB0081A02D /* Stocks.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Stocks.1; sourceTree = "<group>"; };
-		B93F0FB217109AD60081A02D /* StockHolding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockHolding.h; sourceTree = "<group>"; };
-		B93F0FB317109AD60081A02D /* StockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockHolding.m; sourceTree = "<group>"; };
+		B93F0FB217109AD60081A02D /* StockBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockBase.h; sourceTree = "<group>"; };
+		B93F0FB317109AD60081A02D /* StockBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockBase.m; sourceTree = "<group>"; };
+		B93F0FBB1710BBA50081A02D /* ForeignStockHolding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForeignStockHolding.h; path = Stocks/ForeignStockHolding.h; sourceTree = "<group>"; };
+		B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForeignStockHolding.m; path = Stocks/ForeignStockHolding.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 		B93F0F9817109ABA0081A02D = {
 			isa = PBXGroup;
 			children = (
-				B93F0FB217109AD60081A02D /* StockHolding.h */,
-				B93F0FB317109AD60081A02D /* StockHolding.m */,
+				B93F0FB217109AD60081A02D /* StockBase.h */,
+				B93F0FB317109AD60081A02D /* StockBase.m */,
+				B93F0FBB1710BBA50081A02D /* ForeignStockHolding.h */,
+				B93F0FBC1710BBA50081A02D /* ForeignStockHolding.m */,
 				B93F0FA617109ABB0081A02D /* Stocks */,
 				B93F0FA317109ABB0081A02D /* Frameworks */,
 				B93F0FA217109ABB0081A02D /* Products */,
@@ -145,7 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93F0FA817109ABB0081A02D /* main.m in Sources */,
-				B93F0FB417109AD60081A02D /* StockHolding.m in Sources */,
+				B93F0FB417109AD60081A02D /* StockBase.m in Sources */,
+				B93F0FBD1710BBA50081A02D /* ForeignStockHolding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +254,7 @@
 				B93F0FB117109ABB0081A02D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
