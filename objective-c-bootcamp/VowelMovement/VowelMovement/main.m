@@ -34,32 +34,7 @@ int main(int argc, const char * argv[])
                            nil];
         
         // declare the block variable
-        //        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop) {
-        //
-        //            NSRange yRange = [string rangeOfString:@"y"
-        //                                           options:NSCaseInsensitiveSearch];
-        //            // did I find a y?
-        //            if(yRange.location != NSNotFound) {
-        //                *stop = YES;
-        //                return;
-        //            }
-        //
-        //            NSMutableString *newString = [NSMutableString stringWithString:string];
-        //
-        //            // iterate over the array of vowels, replacing occurrences of each
-        //            // with an empty string
-        //            for (NSString *s in vowels) {
-        //                NSRange fullRange = NSMakeRange(0, [newString length]);
-        //                [newString replaceOccurrencesOfString:s
-        //                                           withString:@""
-        //                                              options:NSCaseInsensitiveSearch
-        //                                                range:fullRange];
-        //            }
-        //
-        //            [newStrings addObject:newString];
-        //        };
-        
-        [oldStrings enumerateObjectsUsingBlock:^(id string, NSUInteger i, BOOL *stop) {
+        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop) {
             
             NSRange yRange = [string rangeOfString:@"y"
                                            options:NSCaseInsensitiveSearch];
@@ -82,8 +57,9 @@ int main(int argc, const char * argv[])
             }
             
             [newStrings addObject:newString];
-        }
-         ];
+        };
+        
+        [oldStrings enumerateObjectsUsingBlock:devowelizer];
         NSLog(@"new strings: %@", newStrings);
         
     }
