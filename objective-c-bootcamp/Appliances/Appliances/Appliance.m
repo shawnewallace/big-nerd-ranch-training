@@ -10,8 +10,6 @@
 
 @implementation Appliance
 
-@synthesize productName, voltage;
-
 - (id)initWithProductName:(NSString *)pn
 {
     self = [super init];
@@ -31,6 +29,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: %d volts>", productName, voltage];
+    return [NSString stringWithFormat:@"<%@: %d volts>", [self productName], [self voltage]];
 }
 @end

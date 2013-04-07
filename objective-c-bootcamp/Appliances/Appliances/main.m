@@ -21,6 +21,8 @@ int main(int argc, const char * argv[])
         [a setVoltage:240];
         NSLog(@"a is %@", a);
         
+        NSLog(@"the product name is %@", [a valueForKey:@"productName"]);
+        
         // custom by me
         OwnedAppliance *owned = [[OwnedAppliance alloc] initWithProductName:@"Dryer"
                                                              firstOwnerName:@"Shawn"];
