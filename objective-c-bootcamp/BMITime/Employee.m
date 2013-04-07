@@ -16,7 +16,7 @@
 - (void)addAssetsObject:(Asset *)a
 {
     if (!assets) {
-        assets = [[NSMutableArray alloc] init];
+        assets = [[NSMutableSet alloc] init];
     }
     
     [assets addObject:a];
