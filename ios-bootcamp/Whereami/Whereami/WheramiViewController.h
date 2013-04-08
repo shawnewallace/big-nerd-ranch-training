@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface WheramiViewController : UIViewController<CLLocationManagerDelegate> {
-    CLLocationManager *_locationManager;
-}
+@interface WheramiViewController : UIViewController<CLLocationManagerDelegate,
+                                                    MKMapViewDelegate,
+                                                    UITextFieldDelegate>
+
 
 @end
