@@ -13,7 +13,8 @@ int main(int argc, const char * argv[])
     
     @autoreleasepool {
         
-        // create the array of strings to devowelize and a container for new ones
+        // create the array of strings to devowelize and a container for new
+        // ones
         NSArray *oldStrings = [NSArray arrayWithObjects:
                                @"Sauerkraut",
                                @"Raygun",
@@ -34,7 +35,9 @@ int main(int argc, const char * argv[])
                            nil];
         
         // declare the block variable
-        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop) {
+        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string,
+                                                        NSUInteger i,
+                                                        BOOL *stop) {
             
             NSRange yRange = [string rangeOfString:@"y"
                                            options:NSCaseInsensitiveSearch];
@@ -44,7 +47,8 @@ int main(int argc, const char * argv[])
                 return;
             }
             
-            NSMutableString *newString = [NSMutableString stringWithString:string];
+            NSMutableString *newString = [NSMutableString
+                                          stringWithString:string];
             
             // iterate over the array of vowels, replacing occurrences of each
             // with an empty string
