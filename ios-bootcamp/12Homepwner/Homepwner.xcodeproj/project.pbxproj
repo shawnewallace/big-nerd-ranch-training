@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B92562161714525800E5E375 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92562141714525800E5E375 /* DetailViewController.m */; };
-		B92562171714525800E5E375 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92562151714525800E5E375 /* DetailViewController.xib */; };
-		B925621A1714713200E5E375 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B92562191714713200E5E375 /* BNRImageStore.m */; };
 		BE4B4D311639CF200015B740 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4B4D301639CF200015B740 /* UIKit.framework */; };
 		BE4B4D331639CF200015B740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4B4D321639CF200015B740 /* Foundation.framework */; };
 		BE4B4D351639CF200015B740 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4B4D341639CF200015B740 /* CoreGraphics.framework */; };
@@ -22,14 +19,12 @@
 		BE4B4D531639D0970015B740 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4D521639D0970015B740 /* ItemsViewController.m */; };
 		BE4B4D571639D1400015B740 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4D561639D1400015B740 /* BNRItem.m */; };
 		BE4B4D5A1639D1850015B740 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4B4D591639D1850015B740 /* BNRItemStore.m */; };
+		BE539A60163ADB320048B629 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE539A5E163ADB320048B629 /* DetailViewController.m */; };
+		BE539A61163ADB320048B629 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE539A5F163ADB320048B629 /* DetailViewController.xib */; };
+		BE539A69163AF4BF0048B629 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BE539A68163AF4BF0048B629 /* BNRImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B92562131714525800E5E375 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B92562141714525800E5E375 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		B92562151714525800E5E375 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		B92562181714713200E5E375 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
-		B92562191714713200E5E375 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		BE4B4D2C1639CF200015B740 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4B4D301639CF200015B740 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE4B4D321639CF200015B740 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +44,11 @@
 		BE4B4D561639D1400015B740 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		BE4B4D581639D1850015B740 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		BE4B4D591639D1850015B740 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		BE539A5D163ADB320048B629 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BE539A5E163ADB320048B629 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BE539A5F163ADB320048B629 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		BE539A67163AF4BF0048B629 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRImageStore.h; path = Homepwner/BNRImageStore.h; sourceTree = "<group>"; };
+		BE539A68163AF4BF0048B629 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRImageStore.m; path = Homepwner/BNRImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,8 @@
 		BE4B4D211639CF200015B740 = {
 			isa = PBXGroup;
 			children = (
+				BE539A67163AF4BF0048B629 /* BNRImageStore.h */,
+				BE539A68163AF4BF0048B629 /* BNRImageStore.m */,
 				BE4B4D361639CF200015B740 /* Homepwner */,
 				BE4B4D2F1639CF200015B740 /* Frameworks */,
 				BE4B4D2D1639CF200015B740 /* Products */,
@@ -97,11 +99,9 @@
 			children = (
 				BE4B4D3F1639CF200015B740 /* HomepwnerAppDelegate.h */,
 				BE4B4D401639CF200015B740 /* HomepwnerAppDelegate.m */,
-				B92562131714525800E5E375 /* DetailViewController.h */,
-				B92562141714525800E5E375 /* DetailViewController.m */,
-				B92562151714525800E5E375 /* DetailViewController.xib */,
-				B92562181714713200E5E375 /* BNRImageStore.h */,
-				B92562191714713200E5E375 /* BNRImageStore.m */,
+				BE539A5D163ADB320048B629 /* DetailViewController.h */,
+				BE539A5E163ADB320048B629 /* DetailViewController.m */,
+				BE539A5F163ADB320048B629 /* DetailViewController.xib */,
 				BE4B4D581639D1850015B740 /* BNRItemStore.h */,
 				BE4B4D591639D1850015B740 /* BNRItemStore.m */,
 				BE4B4D371639CF200015B740 /* Supporting Files */,
@@ -183,7 +183,7 @@
 				BE4B4D431639CF200015B740 /* Default.png in Resources */,
 				BE4B4D451639CF200015B740 /* Default@2x.png in Resources */,
 				BE4B4D471639CF200015B740 /* Default-568h@2x.png in Resources */,
-				B92562171714525800E5E375 /* DetailViewController.xib in Resources */,
+				BE539A61163ADB320048B629 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +199,8 @@
 				BE4B4D531639D0970015B740 /* ItemsViewController.m in Sources */,
 				BE4B4D571639D1400015B740 /* BNRItem.m in Sources */,
 				BE4B4D5A1639D1850015B740 /* BNRItemStore.m in Sources */,
-				B92562161714525800E5E375 /* DetailViewController.m in Sources */,
-				B925621A1714713200E5E375 /* BNRImageStore.m in Sources */,
+				BE539A60163ADB320048B629 /* DetailViewController.m in Sources */,
+				BE539A69163AF4BF0048B629 /* BNRImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +273,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -286,7 +286,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
