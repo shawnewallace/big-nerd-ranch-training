@@ -14,5 +14,8 @@
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 
 @property (nonatomic, strong) BNRItem *item;
+@property (nonatomic, copy) void (^dismissBlock)(void);
+
+- (id)initForNewItem:(BOOL)isNew;
 
 @end

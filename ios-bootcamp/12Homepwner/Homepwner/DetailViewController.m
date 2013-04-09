@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+
 @interface DetailViewController ()
 {
     UIPopoverController *_imagePickerPopover;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
@@ -27,6 +29,66 @@
 @end
 
 @implementation DetailViewController
+
+- (void)cancel:(id)sender
+{
+    // if the user cancelled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore] removeItem:[self item]];
+    
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:[self dismissBlock]];
+}
+
+- (void)save:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:[self dismissBlock]];
+}
+
+- (id)initForNewItem:(BOOL)isNew
+{
+    self = [super initWithNibName:@"DetailViewController" bundle:nil];
+    
+    if (!self) return self;
+    
+    if (isNew) {
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]
+                                     initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                     target:self action:@selector(save:)];
+        [[self navigationItem] setRightBarButtonItem:doneItem];
+        
+        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                       target:self
+                                       action:@selector(cancel:)];
+        [[self navigationItem] setLeftBarButtonItem:cancelItem];
+        
+    }
+    
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"USe initForNewItem:"
+                                 userInfo:nil];
+    return nil;
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration
+{
+    if([[UIDevice currentDevice] userInterfaceIdiom]  == UIUserInterfaceIdiomPhone) {
+        if(UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            [[self imageView] setHidden:YES];
+            [[self cameraButton] setEnabled:NO];
+        } else {
+            [[self imageView] setHidden:NO];
+            [[self cameraButton] setEnabled:YES];
+        }
+    }
+}
 
 - (void)viewDidLayoutSubviews
 {
