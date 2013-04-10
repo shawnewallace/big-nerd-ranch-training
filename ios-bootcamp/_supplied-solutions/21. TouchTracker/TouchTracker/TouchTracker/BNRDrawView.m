@@ -249,7 +249,7 @@
         [_finishedLines addObject:line];
         [_linesInProgress removeObjectForKey:key];
         
-        [line setContainingArray:_finishedLines];
+//        [line setContainingArray:_finishedLines];
     }
 
     [self setNeedsDisplay];
@@ -297,11 +297,11 @@
         strokeLine([self selectedLine]);
     }
     
-    float f = 0.0;
-    for (int i = 0; i < 1000; i++) {
-        f = f + sin(sin(time(NULL) + i));
-    }
-    NSLog(@"f = %f", f);
+//    float f = 0.0;
+//    for (int i = 0; i < 1000000; i++) {
+//        f = f + sin(sin(time(NULL) + i));
+//    }
+//    NSLog(@"f = %f", f);
 }
 
 @end

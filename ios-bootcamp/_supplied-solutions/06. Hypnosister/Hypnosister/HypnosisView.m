@@ -10,7 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface HypnosisView ()
-
+{
+    CALayer *_boxLayer;
+}
 @end
 
 @implementation HypnosisView
@@ -22,8 +24,54 @@
         // All HypnosisViews start with a clear background color
         [self setBackgroundColor:[UIColor clearColor]];
         [self setCircleColor:[UIColor lightGrayColor]];
+        
+        // Create the new layer object
+        _boxLayer = [[CALayer alloc] init];
+        // Give it a size
+        [_boxLayer setBounds:CGRectMake(0.0, 0.0, 85.0, 85.0)];
+        // Give it a location
+        [_boxLayer setPosition:CGPointMake(160.0, 100.0)];
+        // Make half-transparent red the background color for the layer
+        UIColor *reddish = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+        // Get a CGColor object with the same color values
+        CGColorRef cgReddish = [reddish CGColor];
+        [_boxLayer setBackgroundColor:cgReddish];
+        
+        // Create a UIImage
+        UIImage *layerImage = [UIImage imageNamed:@"Hypno.png"];
+        // Get the underlying CGImage
+        CGImageRef image = [layerImage CGImage];
+        // Put the CGImage on the layer
+        [_boxLayer setContents:(__bridge id)image];
+        // Inset the image a bit on each side
+        [_boxLayer setContentsRect:CGRectMake(-0.1, -0.1, 1.2, 1.2)];
+        // Let the image resize (without changing the aspect ratio)
+        // to fill the contentRect
+        [_boxLayer setContentsGravity:kCAGravityResizeAspect];
+        
+        // Make it a sublayer of the view's layer
+        [[self layer] addSublayer:_boxLayer];
     }
     return self;
+}
+
+- (void)touchesBegan:(NSSet *)touches
+           withEvent:(UIEvent *)event
+{
+    UITouch *t = [touches anyObject];
+    CGPoint p = [t locationInView:self];
+    [_boxLayer setPosition:p];
+}
+
+- (void)touchesMoved:(NSSet *)touches
+           withEvent:(UIEvent *)event
+{
+    UITouch *t = [touches anyObject];
+    CGPoint p = [t locationInView:self];
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    [_boxLayer setPosition:p];
+    [CATransaction commit];
 }
 
 - (void)setCircleColor:(UIColor *)clr
