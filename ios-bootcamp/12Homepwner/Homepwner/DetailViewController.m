@@ -274,6 +274,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         [_imagePickerPopover dismissPopoverAnimated:YES];
         _imagePickerPopover = nil;
     }
+    
+    [[self item] setThumbnailDataFromImage:image];
 }
 
 @end

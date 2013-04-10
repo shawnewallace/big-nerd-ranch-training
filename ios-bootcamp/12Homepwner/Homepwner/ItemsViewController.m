@@ -124,23 +124,49 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Create an instance of UITableViewCell, with default appearance
-
-// Check for a reusable cell first, use that if it exists
-    UITableViewCell *cell =
-        [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    // If there is no reusable cell of this type, create a new one
-    if (!cell) {
-        cell = [[UITableViewCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                  reuseIdentifier:@"UITableViewCell"];
-    }
-    // that is at the nth index of items, where n = row this cell
-    // will appear in on the tableview
-    NSArray *items = [[BNRItemStore sharedStore] allItems];
-    BNRItem *p = items[[indexPath row]];
-    [[cell textLabel] setText:[p description]];
+//    // Create an instance of UITableViewCell, with default appearance
+//    // Check for a reusable cell first, use that if it exists
+//    UITableViewCell *cell =
+//        [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+//    // If there is no reusable cell of this type, create a new one
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc]
+//                    initWithStyle:UITableViewCellStyleDefault
+//                  reuseIdentifier:@"UITableViewCell"];
+//    }
+//    // that is at the nth index of items, where n = row this cell
+//    // will appear in on the tableview
+//    NSArray *items = [[BNRItemStore sharedStore] allItems];
+//    BNRItem *p = items[[indexPath row]];
+//    [[cell textLabel] setText:[p description]];
+//    return cell;
+    BNRItem *p = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+    
+    //Get the new or recycled cell
+    HomepwnerItemCell *cell = [tableView
+                               dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
+    
+    // configure the cell with the BNRItem
+    [[cell nameLabel] setText:[p itemName]];
+    [[cell serialNumberLabel] setText:[p serialNumber]];
+    [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
+    
+    [[cell tumbnailView] setImage:[p thumbnail]];
+    
     return cell;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"HomepwnerItemCell"
+                                bundle:nil];
+    
+    // Register this NIB which contains the cell
+    [[self tableView] registerNib:nib
+           forCellReuseIdentifier:@"HomepwnerItemCell"];
 }
 
 @end

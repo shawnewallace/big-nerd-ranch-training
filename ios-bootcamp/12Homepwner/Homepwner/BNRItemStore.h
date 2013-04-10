@@ -11,15 +11,16 @@
 
 
 @interface BNRItemStore : NSObject
-+ (BNRItemStore *)sharedStore;
 
 @property (nonatomic, strong, readonly) NSArray *allItems;
 
++ (BNRItemStore *)sharedStore;
+
 - (void)removeItem:(BNRItem *)p;
 - (BNRItem *)createItem;
-
-
 - (void)moveItemAtIndex:(int)from
                 toIndex:(int)to;
+- (NSString *)itemArchivePath;
+- (BOOL)saveChanges;
 
 @end

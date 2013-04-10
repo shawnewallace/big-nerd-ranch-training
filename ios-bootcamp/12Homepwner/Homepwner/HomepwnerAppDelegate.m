@@ -8,6 +8,7 @@
 
 #import "HomepwnerAppDelegate.h"
 #import "ItemsViewController.h"
+#import "BNRItemStore.h"
 
 @implementation HomepwnerAppDelegate
 
@@ -25,6 +26,18 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)applicationDidEnterBackground:(UIApplication *)application
+{
+    BOOL success = [[BNRItemStore sharedStore] saveChanges];
+    
+    if (success) {
+        NSLog(@"Save all of the BNRItems");
+        return;
+    }
+    
+    NSLog(@"Could not save any of the BNRItems");
 }
 
 
