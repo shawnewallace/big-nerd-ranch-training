@@ -68,15 +68,15 @@
         [_boxLayer setShadowRadius:10.0];
         
         
-        _innerLayer = [[CALayer alloc] init];
-        [_innerLayer setBounds:CGRectMake(0.0, 0.0, 85.0 / 2.0, 85.0 / 2.0)];
-        [_innerLayer setPosition:CGPointMake(85.0 / 2.0, 85.0 / 2.0)];
-        UIImage *innerLayerImage = [UIImage imageNamed:@"Time.png"];
-        CGImageRef innerImage = [innerLayerImage CGImage];
-        [_innerLayer setContents:(__bridge id) innerImage];
-        [_innerLayer setContentsRect:CGRectMake(-0.1, -0.1, 1.2, 1.2)];
-        [_innerLayer setContentsGravity:kCAGravityResizeAspect];
-        [_boxLayer addSublayer:_innerLayer];
+//        _innerLayer = [[CALayer alloc] init];
+//        [_innerLayer setBounds:CGRectMake(0.0, 0.0, 85.0 / 2.0, 85.0 / 2.0)];
+//        [_innerLayer setPosition:CGPointMake(85.0 / 2.0, 85.0 / 2.0)];
+//        UIImage *innerLayerImage = [UIImage imageNamed:@"Time.png"];
+//        CGImageRef innerImage = [innerLayerImage CGImage];
+//        [_innerLayer setContents:(__bridge id) innerImage];
+//        [_innerLayer setContentsRect:CGRectMake(-0.1, -0.1, 1.2, 1.2)];
+//        [_innerLayer setContentsGravity:kCAGravityResizeAspect];
+//        [_boxLayer addSublayer:_innerLayer];
         
         
         // Make it a sublayer of the view's layer
