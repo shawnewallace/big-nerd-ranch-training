@@ -9,11 +9,33 @@
 #import "ListViewController.h"
 #import "RSSChannel.h"
 #import "RSSItem.h"
-#import "WebViewController.h";
+#import "WebViewController.h"
+#import "ChannelViewController.h"
 
 @implementation ListViewController
 
 @synthesize webViewController;
+
+- (void)showInfo:(id)sender
+{
+    ChannelViewController *channelViewController = [[ChannelViewController alloc] initWithStyle:UITableViewStyleGrouped];
+
+    if ([self splitViewController]) {
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:channelViewController];
+        [[self splitViewController] setViewControllers:@[[self navigationController], nvc]];
+        [[self splitViewController] setDelegate:channelViewController];
+        NSIndexPath *selectedRow = [[self tableView] indexPathForSelectedRow];
+        if (selectedRow)
+            [[self tableView] deselectRowAtIndexPath:selectedRow animated:YES];
+    } else {
+        [[self navigationController] pushViewController:channelViewController
+                                               animated:YES];
+    }
+    
+    NSLog(@"==>  Channel Title: '%@'", [channel title]);
+    
+    [channelViewController listViewController:self handleObject:channel];
+}
 
 - (void)parser:(NSXMLParser *)parser
 didStartElement:(NSString *)elementName
@@ -36,8 +58,22 @@ didStartElement:(NSString *)elementName
     
     if (!self) return self;
     
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithTitle:@"Info"
+                                                            style:UIBarButtonItemStyleBordered
+                                                           target:self
+                                                           action:@selector(showInfo:)];
+    [[self navigationItem] setRightBarButtonItem:bbi];
+    
     [self fetchEntries];
+ 
     return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)io
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) return YES;
+    
+    return io == UIInterfaceOrientationPortrait;
 }
 
 - (void)fetchEntries
@@ -131,15 +167,18 @@ didStartElement:(NSString *)elementName
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[self navigationController] pushViewController:webViewController animated:YES];
+    if (![self splitViewController])
+        [[self navigationController] pushViewController:webViewController animated:YES];
+    else {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:webViewController];
+        
+        [[self splitViewController] setViewControllers:@[[self navigationController], nav]];
+        [[self splitViewController] setDelegate:webViewController];
+    }
     
     RSSItem *entry = [channel items][[indexPath row]];
     
-    NSURL *url = [NSURL URLWithString:[entry link]];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [[webViewController webView] loadRequest:req];
-    
-    [[webViewController navigationItem] setTitle:[entry title]];
+    [webViewController listViewController:self handleObject:entry];
 }
 
 @end

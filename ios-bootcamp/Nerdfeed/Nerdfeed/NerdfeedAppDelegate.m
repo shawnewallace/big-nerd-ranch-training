@@ -19,10 +19,22 @@
 
     ListViewController *lvc = [[ListViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
-    [[self window] setRootViewController:masterNav];
-    
     WebViewController *wvc = [[WebViewController alloc] init];
+    
     [lvc setWebViewController:wvc];
+
+    // Check to make sure we're running on the iPad
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // webViewController must be n navigation controller, you'll see why later
+        UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:wvc];
+        UISplitViewController *svc = [[UISplitViewController alloc] init];
+        [svc setDelegate:wvc];
+        [svc setViewControllers:@[masterNav, detailNav]];
+        [[self window] setRootViewController:svc];
+    } else {
+        [[self window] setRootViewController:masterNav];
+    }
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -48,14 +48,46 @@ didStartElement:(NSString *)elementName
     }
 }
 
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)str
+{
+    [currentString appendString:str];
+}
+
 - (void)parser:(NSXMLParser *) parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
     currentString = nil;
     
     // if the element that ended was the channel, give up control to
     // who gave us control in the first place
-    if ([elementName isEqual:@"channel"])
+    if ([elementName isEqual:@"channel"]) {
         [parser setDelegate:parentParserDelegate];
+        [self trimItemTitles];
+    }
+}
+
+- (void)trimItemTitles
+{
+    NSRegularExpression *reg = [[NSRegularExpression alloc] initWithPattern:@".* :: (.*) :: .*"
+                                                                    options:0
+                                                                      error:nil];
+    for(RSSItem *i in items) {
+        NSString *itemTitle = [i title];
+        
+        NSArray *matches = [reg matchesInString:itemTitle
+                                        options:0
+                                          range:NSMakeRange(0, [itemTitle length])];
+        
+        if ([matches count] > 0) {
+            NSTextCheckingResult *result = matches[0];
+            NSRange r = [result range];
+            NSLog(@"Match at {%d, %d} for %@!", r.location, r.length, itemTitle);
+            
+            if([result numberOfRanges] == 2){
+                NSRange r = [result rangeAtIndex:1];
+                [i setTitle:[itemTitle substringWithRange:r]];
+            }
+        }
+    }
 }
 
 @end

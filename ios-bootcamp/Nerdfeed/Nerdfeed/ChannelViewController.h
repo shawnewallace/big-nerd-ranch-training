@@ -1,5 +1,5 @@
 //
-//  WebViewController.h
+//  ChannelViewController.h
 //  Nerdfeed
 //
 //  Created by Shawn Ellis Wallace on 4/11/13.
@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ListViewController.h"
 
-@interface WebViewController : UIViewController<ListViewControllerDelegate, UISplitViewControllerDelegate>
+@class RSSChannel;
 
-@property (nonatomic, readonly) UIWebView *webView;
+@interface ChannelViewController : UITableViewController<ListViewControllerDelegate, UISplitViewControllerDelegate>
+{
+    RSSChannel *channel;
+}
 
 @end

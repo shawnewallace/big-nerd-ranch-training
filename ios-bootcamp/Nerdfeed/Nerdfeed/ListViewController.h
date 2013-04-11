@@ -23,4 +23,11 @@
 @property (nonatomic, strong) WebViewController *webViewController;
 
 - (void)fetchEntries;
+
+@end
+
+@protocol ListViewControllerDelegate
+
+- (void)listViewController:(ListViewController *)lvc handleObject:(id)object;
+
 @end
