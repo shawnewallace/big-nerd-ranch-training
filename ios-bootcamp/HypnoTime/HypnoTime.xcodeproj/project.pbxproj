@@ -24,8 +24,6 @@
 		B935EF6F171364760056AEE9 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B935EF6B171364760056AEE9 /* Hypno@2x.png */; };
 		B935EF70171364760056AEE9 /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = B935EF6C171364760056AEE9 /* Time.png */; };
 		B935EF71171364760056AEE9 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B935EF6D171364760056AEE9 /* Time@2x.png */; };
-		B935EF74171368E60056AEE9 /* AwesomeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B935EF73171368E60056AEE9 /* AwesomeMap.m */; };
-		B935EF761713690E0056AEE9 /* AwesomeMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = B935EF751713690E0056AEE9 /* AwesomeMap.xib */; };
 		B935EF7817136BBF0056AEE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B935EF7717136BBF0056AEE9 /* MapKit.framework */; };
 		B9EFFC9C1715F77F004419A4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9EFFC9B1715F77F004419A4 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -55,9 +53,6 @@
 		B935EF6B171364760056AEE9 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
 		B935EF6C171364760056AEE9 /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Time.png; sourceTree = "<group>"; };
 		B935EF6D171364760056AEE9 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
-		B935EF72171368E60056AEE9 /* AwesomeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMap.h; sourceTree = "<group>"; };
-		B935EF73171368E60056AEE9 /* AwesomeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMap.m; sourceTree = "<group>"; };
-		B935EF751713690E0056AEE9 /* AwesomeMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AwesomeMap.xib; sourceTree = "<group>"; };
 		B935EF7717136BBF0056AEE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9EFFC9B1715F77F004419A4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -124,9 +119,6 @@
 				B935EF6317135F270056AEE9 /* TimeViewController.h */,
 				B935EF6417135F270056AEE9 /* TimeViewController.m */,
 				B935EF6817135FD10056AEE9 /* TimeViewController.xib */,
-				B935EF72171368E60056AEE9 /* AwesomeMap.h */,
-				B935EF73171368E60056AEE9 /* AwesomeMap.m */,
-				B935EF751713690E0056AEE9 /* AwesomeMap.xib */,
 			);
 			path = HypnoTime;
 			sourceTree = "<group>";
@@ -206,7 +198,6 @@
 				B935EF6F171364760056AEE9 /* Hypno@2x.png in Resources */,
 				B935EF70171364760056AEE9 /* Time.png in Resources */,
 				B935EF71171364760056AEE9 /* Time@2x.png in Resources */,
-				B935EF761713690E0056AEE9 /* AwesomeMap.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +213,6 @@
 				B935EF5F17135D120056AEE9 /* HypnosisViewController.m in Sources */,
 				B935EF6217135E690056AEE9 /* HypnosisView.m in Sources */,
 				B935EF6517135F270056AEE9 /* TimeViewController.m in Sources */,
-				B935EF74171368E60056AEE9 /* AwesomeMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

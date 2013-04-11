@@ -9,7 +9,6 @@
 #import "HypnoAppDelegate.h"
 #import "HypnosisViewController.h"
 #import "TimeViewController.h"
-#import "AwesomeMap.h"
 
 @implementation HypnoAppDelegate
 
@@ -21,10 +20,9 @@
     // this line will generate a warning, ignore if for now
     HypnosisViewController *hvc = [[HypnosisViewController alloc] init];
     TimeViewController *tvc = [[TimeViewController alloc] init];
-    AwesomeMap *mvc = [[AwesomeMap alloc] init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[hvc, tvc, mvc]];
+    [tabBarController setViewControllers:@[hvc, tvc]];
     
     [[self window] setRootViewController:tabBarController];
     
