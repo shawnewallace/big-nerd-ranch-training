@@ -7,7 +7,7 @@
 //
 
 #import "RSSChannel.h"
-#import "RSSItem.h";
+#import "RSSItem.h"
 
 @implementation RSSChannel
 
@@ -25,6 +25,19 @@
     return self;
 }
 
+- (void)readFromJSONDictionary:(NSDictionary *)d
+{
+    NSDictionary *feed = d[@"feed"];
+    [self setTitle:feed[@"title"]];
+    NSArray *entries = feed[@"entry"];
+    for (NSDictionary *entry in entries) {
+        RSSItem *i = [[RSSItem alloc] init];
+        [i readFromJSONDictionary:entry];
+        
+        [items addObject:i];
+    }
+}
+
 
 - (void)parser:(NSXMLParser *)parser
 didStartElement:(NSString *)elementName
@@ -40,7 +53,7 @@ didStartElement:(NSString *)elementName
     } else if ([elementName isEqual:@"description"]) {
         currentString = [[NSMutableString alloc] init];
         [self setInfoString:currentString];
-    } else if ([elementName isEqual:@"item"]){
+    } else if ([elementName isEqual:@"item"] || [elementName isEqual:@"entry"]){
         RSSItem *entry = [[RSSItem alloc] init];
         [entry setParentParserDelegate:self];
         [parser setDelegate:entry];

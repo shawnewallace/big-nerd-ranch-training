@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONSerializable.h"
 
-@interface RSSChannel : NSObject
+@interface RSSChannel : NSObject<NSXMLParserDelegate, JSONSerializable>
 {
     NSMutableString *currentString;
 }

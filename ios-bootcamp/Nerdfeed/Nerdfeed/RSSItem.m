@@ -12,6 +12,18 @@
 
 @synthesize title, link, parentParserDelegate;
 
+- (void)readFromJSONDictionary:(NSDictionary *)d
+{
+    [self setTitle:d[@"title"][@"label"]];
+    
+    NSArray *links = d[@"link"];
+    if ([links count] > 1) {
+        NSDictionary *sampleDict = links[1][@"attributes"];
+        
+        [self setLink:sampleDict[@"href"]];
+    }
+}
+
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     NSLog(@"\t\t%@ found a %@ element", self, elementName);
@@ -34,7 +46,7 @@
 {
     currentString = nil;
     
-    if([elementName isEqual:@"item"]) [parser setDelegate:parentParserDelegate];
+    if([elementName isEqual:@"item"] || [elementName isEqual:@"entry"]) [parser setDelegate:parentParserDelegate];
 }
 
 @end
