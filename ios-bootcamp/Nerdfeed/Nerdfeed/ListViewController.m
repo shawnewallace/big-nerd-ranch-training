@@ -50,7 +50,7 @@
                                                            action:@selector(showInfo:)];
     [[self navigationItem] setRightBarButtonItem:bbi];
     
-    UISegmentedControl *rssTypeControl = [[UISegmentedControl alloc] initWithItems:@[@"BNR", @"Classes", @"Apple"]];
+    UISegmentedControl *rssTypeControl = [[UISegmentedControl alloc] initWithItems:@[@"BNR", @"Apple"]];
     [rssTypeControl setSelectedSegmentIndex:0];
     [rssTypeControl setSegmentedControlStyle:UISegmentedControlStyleBar];
     [rssTypeControl addTarget:self
@@ -83,9 +83,10 @@
     [[self navigationItem] setTitleView:aiView];
     [aiView startAnimating];
     
-    
     void (^completionBlock)(RSSChannel *obj, NSError *err) =
      ^(RSSChannel *obj, NSError *err) {
+         NSLog(@"Completion block called!");
+         
          [[self navigationItem] setTitleView:currentTitleView];
          
          if(!err) {
@@ -105,10 +106,37 @@
          }
      };
     
-    if (rssType == ListViewControllerRSSTypeBNR)
-        [[BNRFeedStore sharedStore] fetchRSSFeedWithCompletion:completionBlock];
+    if (rssType == ListViewControllerRSSTypeBNR) {
+        channel = [[BNRFeedStore sharedStore] fetchRSSFeedWithCompletion:
+                   ^(RSSChannel *obj, NSError *err) {
+                       [[self navigationItem] setTitleView:currentTitleView];
+                       if (!err) {
+                           int currentItemCount = [[channel items] count];
+                           channel = obj;
+                           
+                           int newItemCount = [[channel items] count];
+                           
+                           int itemDelta = newItemCount - currentItemCount;
+                           if (itemDelta > 0) {
+                               NSMutableArray *rows = [NSMutableArray array];
+                               for(int i = 0; i < itemDelta; i++) {
+                                   NSIndexPath *ip = [NSIndexPath indexPathForRow:i
+                                                                        inSection:0];
+                                   [rows addObject:ip];
+                               }
+                               
+                               [[self tableView] insertRowsAtIndexPaths:rows
+                                                       withRowAnimation:UITableViewRowAnimationTop];
+                           }
+                       }
+                   }];
+        
+        [[self tableView] reloadData];
+    }
     else if (rssType == ListViewControllerRSSTypeApple)
         [[BNRFeedStore sharedStore] fetchTopSongs:10 withCompletion:completionBlock];
+    
+    NSLog(@"Executing code at the end of fetchEntries");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -129,6 +157,12 @@
     RSSItem *item = [channel items][[indexPath row]];
     [[cell textLabel] setText:[item title]];
     
+    if([[BNRFeedStore sharedStore] hasItemBeenRead:item]) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    } else {
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
     return cell;
 }
 
@@ -144,6 +178,10 @@
     }
     
     RSSItem *entry = [channel items][[indexPath row]];
+    
+    [[BNRFeedStore sharedStore] markItemAsread:entry];
+    
+    [[[self tableView] cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
     
     [webViewController listViewController:self handleObject:entry];
 }

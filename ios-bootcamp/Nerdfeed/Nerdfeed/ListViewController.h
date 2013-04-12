@@ -14,7 +14,6 @@
 
 typedef enum {
     ListViewControllerRSSTypeBNR,
-    LIstViewControllerRSSTYpeBNRSchedule,
     ListViewControllerRSSTypeApple
 } ListViewControllerRSSType;
 

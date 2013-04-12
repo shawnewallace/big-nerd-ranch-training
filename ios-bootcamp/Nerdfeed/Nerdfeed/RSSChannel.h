@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "JSONSerializable.h"
 
-@interface RSSChannel : NSObject<NSXMLParserDelegate, JSONSerializable>
+@interface RSSChannel : NSObject<NSXMLParserDelegate, JSONSerializable, NSCoding, NSCopying>
 {
     NSMutableString *currentString;
 }
@@ -21,5 +21,6 @@
 @property (nonatomic, readonly, strong) NSMutableArray *items;
 
 - (void)trimItemTitles;
+- (void)addItemsFromChannel:(RSSChannel *)otherChannel;
 
 @end

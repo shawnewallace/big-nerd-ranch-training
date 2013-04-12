@@ -23,6 +23,8 @@
 		B9463BF917172E28008B8309 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9463BF817172E28008B8309 /* ChannelViewController.m */; };
 		B9463BFC17173FB3008B8309 /* BNRFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B9463BFB17173FB3008B8309 /* BNRFeedStore.m */; };
 		B9463BFF1717536A008B8309 /* BNRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B9463BFE1717536A008B8309 /* BNRConnection.m */; };
+		B9DC97D217185FFE00BD35F1 /* Nerdfeed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9DC97D017185FFE00BD35F1 /* Nerdfeed.xcdatamodeld */; };
+		B9DC97D41718640000BD35F1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DC97D31718640000BD35F1 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B9463BFD1717536A008B8309 /* BNRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConnection.h; sourceTree = "<group>"; };
 		B9463BFE1717536A008B8309 /* BNRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConnection.m; sourceTree = "<group>"; };
 		B9463C0017175DE8008B8309 /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONSerializable.h; path = ../JSONSerializable.h; sourceTree = "<group>"; };
+		B9DC97D117185FFE00BD35F1 /* Nerdfeed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nerdfeed.xcdatamodel; sourceTree = "<group>"; };
+		B9DC97D31718640000BD35F1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DC97D41718640000BD35F1 /* CoreData.framework in Frameworks */,
 				B9463BCF171704EF008B8309 /* UIKit.framework in Frameworks */,
 				B9463BD1171704EF008B8309 /* Foundation.framework in Frameworks */,
 				B9463BD3171704EF008B8309 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +78,7 @@
 		B9463BC2171704EF008B8309 = {
 			isa = PBXGroup;
 			children = (
+				B9DC97D31718640000BD35F1 /* CoreData.framework */,
 				B9463BD4171704EF008B8309 /* Nerdfeed */,
 				B9463BCD171704EF008B8309 /* Frameworks */,
 				B9463BCC171704EF008B8309 /* Products */,
@@ -108,6 +114,7 @@
 				B9463BD5171704EF008B8309 /* Supporting Files */,
 				B9463BEB17170726008B8309 /* ListViewController.h */,
 				B9463BEC17170726008B8309 /* ListViewController.m */,
+				B9DC97D017185FFE00BD35F1 /* Nerdfeed.xcdatamodeld */,
 				B9463BFD1717536A008B8309 /* BNRConnection.h */,
 				B9463BFE1717536A008B8309 /* BNRConnection.m */,
 				B9463BF717172E28008B8309 /* ChannelViewController.h */,
@@ -211,6 +218,7 @@
 				B9463BF917172E28008B8309 /* ChannelViewController.m in Sources */,
 				B9463BFC17173FB3008B8309 /* BNRFeedStore.m in Sources */,
 				B9463BFF1717536A008B8309 /* BNRConnection.m in Sources */,
+				B9DC97D217185FFE00BD35F1 /* Nerdfeed.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +337,22 @@
 				B9463BEA171704EF008B8309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B9DC97D017185FFE00BD35F1 /* Nerdfeed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B9DC97D117185FFE00BD35F1 /* Nerdfeed.xcdatamodel */,
+			);
+			currentVersion = B9DC97D117185FFE00BD35F1 /* Nerdfeed.xcdatamodel */;
+			path = Nerdfeed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B9463BC3171704EF008B8309 /* Project object */;
 }
